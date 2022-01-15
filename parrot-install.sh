@@ -33,7 +33,7 @@ prompt=$(echo -e "${redColor}\n┌─[root${endColor}${yellowColor}@${endColor}$
 function core_install() {
 	apt update
 	apt install -y bash wget gnupg
-	wget -qO - https://deb.parrotsec.org/parrot/misc/parrotsec.gpg | apt-key add -
+	wget -qO - https://deb.parrotsec.org/parrot/misc/misc/parrotsec.gpg | apt-key add -
 	cp config/etc/apt/sources.list /etc/apt/sources.list
 	cp -r config/etc/apt/sources.list.d/* /etc/apt/sources.list.d
 	cp config/etc/apt/sources.list.parrot /etc/apt/sources.list.parrot
@@ -65,7 +65,7 @@ function embedded_install() {
 function repos_install() {
 	apt update
 	apt install -y bash gnupg
-	wget -qO - https://deb.parrotsec.org/parrot/misc/parrotsec.gpg | apt-key add -
+	wget -qO - https://deb.parrotsec.org/parrot/misc/misc/parrotsec.gpg | apt-key add -
 	cp -r config/etc/apt/sources.list.d/* /etc/apt/sources.list.d
 	apt update
 }
